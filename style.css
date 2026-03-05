@@ -1,3 +1,6 @@
+/* ==========================================================================
+   GLOBAL STYLES
+   ========================================================================== */
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
@@ -7,6 +10,10 @@ body {
     min-height: 100vh;
 }
 
+
+/* ==========================================================================
+   LAYOUT COMPONENTS (Header & Footer)
+   ========================================================================== */
 header {
     background-color: #13767f;
     color: #f8f6e3;
@@ -34,6 +41,11 @@ footer {
     opacity: 0.9;
 }
 
+
+/* ==========================================================================
+   MAIN CONTENT AREA
+   ========================================================================== */
+
 main {
     width: 80%;
     max-width: 1200px;
@@ -43,6 +55,7 @@ main {
     padding-bottom: 20px;
 }
 
+/* Introduction Text Section */
 .intro {
     margin-bottom: 40px;
     text-align: center; /* Centering the content inside the .intro section */
@@ -56,6 +69,10 @@ main {
     max-width: 800px; /* Optional: limit the maximum width for readability */
 }
 
+
+/* ==========================================================================
+   TRAINING EVENT MODULES
+   ========================================================================== */
 .event-section {
     background-color: #f9f9f6;
     border-radius: 8px;
@@ -65,12 +82,14 @@ main {
     box-sizing: border-box;
 }
 
+/* Section Headings (e.g., CARDIAC MRI) */
 h2 {
     color: #0d38bb;
     margin-bottom: 20px;
     font-size: 1.5em;
 }
 
+/* Subsection Headings (e.g., Week 1) */
 h3 {
     color: #13767f;
     margin-bottom: 10px;
@@ -78,6 +97,10 @@ h3 {
     text-align: center;
 }
 
+
+/* ==========================================================================
+   NAVIGATION & BUTTONS
+   ========================================================================== */
 ul {
     list-style: none;
     padding: 0;
@@ -88,6 +111,7 @@ ul {
     margin-bottom: 1px;
 }
 
+/* Flexbox container to align 'Day' buttons in a row */
 .week-list ul {
     display: flex;
     justify-content: center;
@@ -101,6 +125,8 @@ li {
     display: inline; /* Ensure list items are displayed inline without markers */
 }
 
+
+/* Training Day Link Styles */
 a.button {
     display: inline-block;
     padding: 10px 20px;
@@ -112,7 +138,9 @@ a.button {
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
+/* Interactive Hover States */
 a.button:hover {
     background-color: #003fd2;
     transform: scale(1.05);
 }
+
