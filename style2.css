@@ -1,16 +1,18 @@
 :root {
-    --siemens-teal: #009999;
-    --siemens-teal-light: #00b2a9;
-    --siemens-teal-dark: #006b75;
-    --bg-primary: #f5f8f9;
-    --bg-secondary: #eef4f5;
-    --surface: #ffffff;
-    --text-primary: #1f2937;
-    --text-secondary: #4b5563;
-    --text-muted: #6b7280;
-    --border: #d9e2e5;
-    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
-    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.06);
+    --siemens-yellow: #ffd43b;
+    --siemens-yellow-light: #ffe98a;
+    --siemens-orange: #f26a00;
+    --siemens-orange-dark: #c94f00;
+    --bg-primary: #070809;
+    --bg-secondary: #151719;
+    --surface: #101214;
+    --surface-elevated: #1a1c1f;
+    --text-primary: #fff1bd;
+    --text-secondary: #ded8c8;
+    --text-muted: #aaa391;
+    --border: #363229;
+    --shadow-sm: 0 3px 12px rgba(0, 0, 0, 0.35);
+    --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.45);
     --radius: 12px;
     --font-family: "Inter", "Segoe UI", sans-serif;
 }
@@ -24,7 +26,9 @@ body {
     margin: 0;
     display: flex;
     flex-direction: column;
-    background: var(--bg-primary);
+    background:
+        radial-gradient(ellipse at 50% 0, rgba(242, 106, 0, 0.08), transparent 38%),
+        var(--bg-primary);
     color: var(--text-primary);
     font-family: var(--font-family);
     line-height: 1.65;
@@ -32,16 +36,28 @@ body {
 
 header {
     padding: 1.25rem 1rem;
-    background: linear-gradient(120deg, var(--siemens-teal-dark), var(--siemens-teal));
-    color: var(--surface);
+    position: relative;
+    background: var(--bg-primary);
+    color: var(--siemens-yellow);
     text-align: center;
     box-shadow: var(--shadow-md);
+    border-bottom: 1px solid var(--border);
+}
+
+header::after {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--siemens-yellow), var(--siemens-orange), var(--siemens-yellow-light));
+    content: "";
 }
 
 header h1,
 .header {
     margin: 0;
-    color: var(--surface);
+    color: var(--siemens-yellow);
     font-size: clamp(1.25rem, 3vw, 1.75rem);
 }
 
@@ -74,7 +90,7 @@ main > section {
 
 h1 {
     margin: 0 0 1.25rem;
-    color: var(--siemens-teal-dark);
+    color: var(--siemens-yellow);
     text-align: center;
     font-size: clamp(1.5rem, 3vw, 2rem);
     line-height: 1.3;
@@ -82,7 +98,7 @@ h1 {
 
 h2 {
     margin: 1.75rem 0 0.75rem;
-    color: var(--siemens-teal-dark);
+    color: var(--siemens-yellow);
     font-size: 1.25rem;
 }
 
@@ -90,7 +106,7 @@ h2 {
 .images h2 {
     margin-top: 0;
     padding-bottom: 0.65rem;
-    border-bottom: 2px solid var(--bg-secondary);
+    border-bottom: 2px solid var(--siemens-orange);
 }
 
 p {
@@ -109,7 +125,7 @@ li {
 }
 
 a {
-    color: var(--siemens-teal-dark);
+    color: var(--siemens-yellow-light);
     text-decoration: underline;
     text-decoration-color: transparent;
     text-underline-offset: 0.2em;
@@ -117,12 +133,12 @@ a {
 }
 
 a:hover {
-    color: var(--siemens-teal);
+    color: var(--siemens-orange);
     text-decoration-color: currentColor;
 }
 
 a:focus-visible {
-    outline: 3px solid var(--siemens-teal-light);
+    outline: 3px solid var(--siemens-yellow);
     outline-offset: 3px;
 }
 
@@ -143,17 +159,17 @@ a:focus-visible {
 }
 
 .summary-table th {
-    background: var(--siemens-teal-dark);
-    color: var(--surface);
+    background: linear-gradient(110deg, var(--siemens-yellow), var(--siemens-orange));
+    color: #17120a;
     font-weight: 600;
 }
 
 .summary-table tbody tr:nth-child(even) {
-    background: var(--bg-primary);
+    background: var(--bg-secondary);
 }
 
 .summary-table tbody tr:hover {
-    background: var(--bg-secondary);
+    background: var(--surface-elevated);
 }
 
 .references {
@@ -169,6 +185,7 @@ a:focus-visible {
 
 .references p {
     margin: 0.4rem 0;
+    color: var(--text-muted);
     font-size: 0.85rem;
 }
 
@@ -191,15 +208,16 @@ a:focus-visible {
 footer {
     margin-top: auto;
     padding: 1rem;
-    background: var(--siemens-teal-dark);
-    color: var(--surface);
+    background: var(--bg-primary);
+    color: var(--text-secondary);
     text-align: center;
+    border-top: 1px solid var(--siemens-orange);
 }
 
 .footer1,
 footer p {
     margin: 0;
-    color: var(--surface);
+    color: var(--text-secondary);
     font-size: 0.9rem;
 }
 

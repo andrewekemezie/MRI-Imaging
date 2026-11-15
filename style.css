@@ -1,16 +1,18 @@
 :root {
-    --siemens-teal: #009999;
-    --siemens-teal-light: #00b2a9;
-    --siemens-teal-dark: #006b75;
-    --bg-primary: #f5f8f9;
-    --bg-secondary: #eef4f5;
-    --surface: #ffffff;
-    --text-primary: #1f2937;
-    --text-secondary: #4b5563;
-    --text-muted: #6b7280;
-    --border: #d9e2e5;
-    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
-    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.06);
+    --siemens-yellow: #ffd43b;
+    --siemens-yellow-light: #ffe98a;
+    --siemens-orange: #f26a00;
+    --siemens-orange-dark: #c94f00;
+    --bg-primary: #070809;
+    --bg-secondary: #151719;
+    --surface: #101214;
+    --surface-elevated: #1a1c1f;
+    --text-primary: #fff1bd;
+    --text-secondary: #ded8c8;
+    --text-muted: #aaa391;
+    --border: #363229;
+    --shadow-sm: 0 3px 12px rgba(0, 0, 0, 0.35);
+    --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.45);
     --radius: 12px;
     --font-family: "Inter", "Segoe UI", sans-serif;
 }
@@ -24,7 +26,9 @@ body {
     margin: 0;
     display: flex;
     flex-direction: column;
-    background: var(--bg-primary);
+    background:
+        radial-gradient(ellipse at 50% 0, rgba(242, 106, 0, 0.08), transparent 38%),
+        var(--bg-primary);
     color: var(--text-primary);
     font-family: var(--font-family);
     line-height: 1.6;
@@ -32,10 +36,22 @@ body {
 
 header {
     padding: 1.5rem 1rem;
-    background: linear-gradient(120deg, var(--siemens-teal-dark), var(--siemens-teal));
-    color: var(--surface);
+    position: relative;
+    background: var(--bg-primary);
+    color: var(--siemens-yellow);
     text-align: center;
     box-shadow: var(--shadow-md);
+    border-bottom: 1px solid var(--border);
+}
+
+header::after {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--siemens-yellow), var(--siemens-orange), var(--siemens-yellow-light));
+    content: "";
 }
 
 header h1 {
@@ -68,7 +84,7 @@ main {
 }
 
 .intro strong {
-    color: var(--siemens-teal-dark);
+    color: var(--siemens-yellow);
 }
 
 .event-section {
@@ -87,8 +103,8 @@ h2 {
     grid-column: 1 / -1;
     margin: 0;
     padding-bottom: 0.75rem;
-    border-bottom: 2px solid var(--bg-secondary);
-    color: var(--siemens-teal-dark);
+    border-bottom: 2px solid var(--siemens-orange);
+    color: var(--siemens-yellow);
     font-size: 1.4rem;
 }
 
@@ -97,7 +113,7 @@ h2 {
     padding: 1rem;
     border: 1px solid var(--border);
     border-radius: calc(var(--radius) - 4px);
-    background: var(--bg-primary);
+    background: var(--surface-elevated);
 }
 
 .week-list > li {
@@ -108,7 +124,7 @@ h2 {
 
 h3 {
     margin: 0 0 0.75rem;
-    color: var(--text-primary);
+    color: var(--siemens-yellow-light);
     font-size: 1rem;
 }
 
@@ -130,8 +146,8 @@ a.button {
     padding: 0.5rem 0.85rem;
     border: 1px solid transparent;
     border-radius: 8px;
-    background: var(--siemens-teal-dark);
-    color: var(--surface);
+    background: linear-gradient(110deg, var(--siemens-yellow), var(--siemens-orange));
+    color: #17120a;
     font-size: 0.9rem;
     font-weight: 600;
     text-decoration: none;
@@ -140,20 +156,21 @@ a.button {
 
 a.button:hover {
     transform: translateY(-1px);
-    background: var(--siemens-teal-dark);
+    background: linear-gradient(110deg, var(--siemens-yellow-light), var(--siemens-orange));
     box-shadow: var(--shadow-sm);
 }
 
 a.button:focus-visible {
-    outline: 3px solid var(--siemens-teal-light);
+    outline: 3px solid var(--siemens-yellow);
     outline-offset: 3px;
 }
 
 footer {
     padding: 1rem;
-    background: var(--siemens-teal-dark);
-    color: var(--surface);
+    background: var(--bg-primary);
+    color: var(--text-secondary);
     text-align: center;
+    border-top: 1px solid var(--siemens-orange);
 }
 
 footer p {
