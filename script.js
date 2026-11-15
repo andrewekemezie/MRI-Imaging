@@ -1,3 +1,4 @@
 "use strict";
 
-// Shared JavaScript for the website. Add future browser behavior here.
+// This file can be used for future page interactions.
+// Right now it keeps the page ready for small scripts without affecting the layout.

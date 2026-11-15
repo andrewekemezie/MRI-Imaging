@@ -1,8 +1,8 @@
+/* This file styles the detail pages for each training day. */
 :root {
     --siemens-yellow: #ffd43b;
     --siemens-yellow-light: #ffe98a;
     --siemens-orange: #f26a00;
-    --siemens-orange-dark: #c94f00;
     --bg-primary: #070809;
     --bg-secondary: #151719;
     --surface: #101214;
@@ -21,6 +21,7 @@
     box-sizing: border-box;
 }
 
+/* Basic page setup for article-style pages. */
 body {
     min-height: 100vh;
     margin: 0;
@@ -73,6 +74,7 @@ header h1,
     box-shadow: var(--shadow-md);
 }
 
+/* Main content column for the individual lesson pages. */
 main {
     flex: 1;
     width: min(900px, calc(100% - 2rem));
@@ -142,6 +144,7 @@ a:focus-visible {
     outline-offset: 3px;
 }
 
+/* Table used to show lesson summary information. */
 .summary-table {
     width: 100%;
     margin: 1rem 0 1.5rem;
@@ -205,6 +208,7 @@ a:focus-visible {
     box-shadow: var(--shadow-sm);
 }
 
+/* Footer area for the training page credits. */
 footer {
     margin-top: auto;
     padding: 1rem;

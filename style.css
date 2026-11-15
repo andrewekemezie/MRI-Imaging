@@ -1,8 +1,8 @@
+/* Main colours and design settings used all over the site. */
 :root {
     --siemens-yellow: #ffd43b;
     --siemens-yellow-light: #ffe98a;
     --siemens-orange: #f26a00;
-    --siemens-orange-dark: #c94f00;
     --bg-primary: #070809;
     --bg-secondary: #151719;
     --surface: #101214;
@@ -21,6 +21,7 @@
     box-sizing: border-box;
 }
 
+/* Set the page layout and basic page colours. */
 body {
     min-height: 100vh;
     margin: 0;
@@ -60,12 +61,14 @@ header h1 {
     letter-spacing: 0.06em;
 }
 
+/* The main page area holds the welcome text and course sections. */
 main {
     width: min(1100px, calc(100% - 2rem));
     margin: 2rem auto;
     flex: 1;
 }
 
+/* Intro box styling for the welcome message. */
 .intro {
     margin-bottom: 2rem;
     padding: clamp(1.25rem, 3vw, 2rem);
@@ -87,6 +90,7 @@ main {
     color: var(--siemens-yellow);
 }
 
+/* This section holds each year and week group of training links. */
 .event-section {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -160,11 +164,13 @@ a.button:hover {
     box-shadow: var(--shadow-sm);
 }
 
+/* Keep buttons clear when using the keyboard tab key. */
 a.button:focus-visible {
     outline: 3px solid var(--siemens-yellow);
     outline-offset: 3px;
 }
 
+/* Footer area for the site credit text. */
 footer {
     padding: 1rem;
     background: var(--bg-primary);
@@ -178,6 +184,7 @@ footer p {
     font-size: 0.9rem;
 }
 
+/* Make the layout work well on smaller screens. */
 @media (max-width: 520px) {
     main {
         width: min(100% - 1rem, 1100px);
