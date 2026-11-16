@@ -30,6 +30,52 @@ document.querySelectorAll("[data-theme-toggle]").forEach((button) => {
     });
 });
 
+const prefetchedPages = new Set();
+
+function prefetchPage(event) {
+    if (!(event.target instanceof Element)) {
+        return;
+    }
+
+    const link = event.target.closest("a[href]");
+    if (!link || link.hasAttribute("download") || (link.target && link.target.toLowerCase() !== "_self")) {
+        return;
+    }
+
+    if (event.type === "pointerover" && event.relatedTarget && link.contains(event.relatedTarget)) {
+        return;
+    }
+
+    const connection = navigator.connection;
+    if (connection && (connection.saveData || /(^|-)2g$/.test(connection.effectiveType || ""))) {
+        return;
+    }
+
+    const destination = new URL(link.href);
+    if (
+        destination.origin !== location.origin ||
+        !["http:", "https:"].includes(destination.protocol) ||
+        (destination.pathname === location.pathname && destination.search === location.search)
+    ) {
+        return;
+    }
+
+    destination.hash = "";
+    const url = destination.href;
+    if (prefetchedPages.has(url)) {
+        return;
+    }
+
+    const prefetch = document.createElement("link");
+    prefetch.rel = "prefetch";
+    prefetch.href = url;
+    document.head.append(prefetch);
+    prefetchedPages.add(url);
+}
+
+document.addEventListener("pointerover", prefetchPage);
+document.addEventListener("focusin", prefetchPage);
+
 const insightCards = Array.from(document.querySelectorAll("[data-insight-card]"));
 const insightGroups = Array.from(document.querySelectorAll("[data-insight-list]"));
 
