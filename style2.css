@@ -1,47 +1,25 @@
-/* This file styles the detail pages for each training day. */
-:root {
-    --siemens-yellow: #ffd43b;
-    --siemens-yellow-light: #ffe98a;
-    --siemens-orange: #f26a00;
-    --bg-primary: #070809;
-    --bg-secondary: #151719;
-    --surface: #101214;
-    --surface-elevated: #1a1c1f;
-    --text-primary: #fff1bd;
-    --text-secondary: #ded8c8;
-    --text-muted: #aaa391;
-    --border: #363229;
-    --shadow-sm: 0 3px 12px rgba(0, 0, 0, 0.35);
-    --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.45);
-    --radius: 12px;
-    --font-family: "Inter", "Segoe UI", sans-serif;
-}
-
 * {
     box-sizing: border-box;
 }
 
-/* Basic page setup for article-style pages. */
 body {
     min-height: 100vh;
     margin: 0;
     display: flex;
     flex-direction: column;
     background:
-        radial-gradient(ellipse at 50% 0, rgba(242, 106, 0, 0.08), transparent 38%),
-        var(--bg-primary);
+        radial-gradient(ellipse at 50% 0, var(--ambient-glow), transparent 42%),
+        var(--background);
     color: var(--text-primary);
     font-family: var(--font-family);
     line-height: 1.65;
 }
 
 header {
-    padding: 1.25rem 1rem;
     position: relative;
-    background: var(--bg-primary);
-    color: var(--siemens-yellow);
-    text-align: center;
-    box-shadow: var(--shadow-md);
+    padding: 0.65rem 1rem;
+    background: var(--surface);
+    box-shadow: var(--shadow-sm);
     border-bottom: 1px solid var(--border);
 }
 
@@ -51,15 +29,61 @@ header::after {
     bottom: 0;
     left: 0;
     height: 3px;
-    background: linear-gradient(90deg, var(--siemens-yellow), var(--siemens-orange), var(--siemens-yellow-light));
+    background: linear-gradient(90deg, var(--brand-teal), var(--brand-orange), var(--brand-teal));
     content: "";
 }
 
 header h1,
 .header {
     margin: 0;
-    color: var(--siemens-yellow);
+    color: var(--brand-teal-dark);
     font-size: clamp(1.25rem, 3vw, 1.75rem);
+}
+
+.brand-link {
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
+    text-decoration: none;
+}
+
+.brand-link:focus-visible {
+    outline: 3px solid var(--brand-orange);
+    outline-offset: 5px;
+    border-radius: 4px;
+}
+
+.brand-logo {
+    display: block;
+    width: min(270px, 70vw);
+    max-height: 56px;
+    object-fit: contain;
+}
+
+.header-content {
+    display: flex;
+    width: min(1120px, 100%);
+    min-height: 54px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    margin: 0 auto;
+}
+
+.page-nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 1rem;
+}
+
+.page-nav a {
+    display: inline-flex;
+    align-items: center;
+    color: var(--brand-teal-dark);
+    font-size: 0.86rem;
+    font-weight: 650;
+    text-decoration: none;
 }
 
 .container {
@@ -74,10 +98,9 @@ header h1,
     box-shadow: var(--shadow-md);
 }
 
-/* Main content column for the individual lesson pages. */
 main {
     flex: 1;
-    width: min(900px, calc(100% - 2rem));
+    width: min(1000px, calc(100% - 2rem));
     margin: 2rem auto;
 }
 
@@ -92,7 +115,7 @@ main > section {
 
 h1 {
     margin: 0 0 1.25rem;
-    color: var(--siemens-yellow);
+    color: var(--brand-teal-dark);
     text-align: center;
     font-size: clamp(1.5rem, 3vw, 2rem);
     line-height: 1.3;
@@ -100,7 +123,7 @@ h1 {
 
 h2 {
     margin: 1.75rem 0 0.75rem;
-    color: var(--siemens-yellow);
+    color: var(--brand-teal-dark);
     font-size: 1.25rem;
 }
 
@@ -108,7 +131,7 @@ h2 {
 .images h2 {
     margin-top: 0;
     padding-bottom: 0.65rem;
-    border-bottom: 2px solid var(--siemens-orange);
+    border-bottom: 2px solid var(--brand-orange);
 }
 
 p {
@@ -127,7 +150,7 @@ li {
 }
 
 a {
-    color: var(--siemens-yellow-light);
+    color: var(--brand-teal);
     text-decoration: underline;
     text-decoration-color: transparent;
     text-underline-offset: 0.2em;
@@ -135,16 +158,15 @@ a {
 }
 
 a:hover {
-    color: var(--siemens-orange);
+    color: var(--brand-orange);
     text-decoration-color: currentColor;
 }
 
 a:focus-visible {
-    outline: 3px solid var(--siemens-yellow);
+    outline: 3px solid var(--brand-orange);
     outline-offset: 3px;
 }
 
-/* Table used to show lesson summary information. */
 .summary-table {
     width: 100%;
     margin: 1rem 0 1.5rem;
@@ -162,9 +184,9 @@ a:focus-visible {
 }
 
 .summary-table th {
-    background: linear-gradient(110deg, var(--siemens-yellow), var(--siemens-orange));
-    color: #17120a;
-    font-weight: 600;
+    background: var(--brand-teal);
+    color: var(--text-on-accent);
+    font-weight: 650;
 }
 
 .summary-table tbody tr:nth-child(even) {
@@ -178,8 +200,9 @@ a:focus-visible {
 .references {
     margin-top: 2rem;
     padding: 1rem;
+    border: 1px solid var(--border);
     border-radius: calc(var(--radius) - 4px);
-    background: var(--bg-secondary);
+    background: var(--surface-elevated);
 }
 
 .references h2 {
@@ -208,25 +231,55 @@ a:focus-visible {
     box-shadow: var(--shadow-sm);
 }
 
-/* Footer area for the training page credits. */
 footer {
     margin-top: auto;
-    padding: 1rem;
-    background: var(--bg-primary);
-    color: var(--text-secondary);
-    text-align: center;
-    border-top: 1px solid var(--siemens-orange);
+    padding: 1.25rem 1rem;
+    border-top: 1px solid var(--border);
+    background: var(--surface);
+}
+
+.footer-inner {
+    display: flex;
+    width: min(1120px, 100%);
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    margin: 0 auto;
+}
+
+.footer-brand .brand-logo {
+    width: 150px;
+    max-height: 31px;
 }
 
 .footer1,
 footer p {
     margin: 0;
-    color: var(--text-secondary);
-    font-size: 0.9rem;
+    color: var(--text-muted);
+    font-size: 0.82rem;
 }
 
 @media (max-width: 640px) {
-    .container {
+    .header-content {
+        min-height: 48px;
+    }
+
+    .page-nav {
+        gap: 0.6rem;
+    }
+
+    .page-nav a {
+        font-size: 0.78rem;
+    }
+
+    .brand-logo {
+        width: min(220px, 62vw);
+        max-height: 46px;
+    }
+
+    .container,
+    main {
+        width: min(100% - 1rem, 1000px);
         margin: 1rem auto;
     }
 
@@ -237,5 +290,38 @@ footer p {
     .summary-table th,
     .summary-table td {
         padding: 0.5rem;
+    }
+
+    .footer-inner {
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+    }
+}
+
+@media (max-width: 390px) {
+    header {
+        padding-right: 0.65rem;
+        padding-left: 0.65rem;
+    }
+
+    .header-content {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.25rem 0.75rem;
+    }
+
+    .page-nav {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
     }
 }
