@@ -827,11 +827,32 @@ footer p {
         grid-template-columns: 1fr;
         gap: 1.6rem;
         min-height: 0;
+        margin-bottom: 2rem;
         padding: 1.45rem;
     }
 
+    .hero-visual {
+        display: none;
+    }
+
     .intro h1 {
-        font-size: clamp(2.35rem, 11vw, 3.2rem);
+        margin-bottom: 0.7rem;
+        font-size: clamp(2rem, 8.8vw, 2.8rem);
+    }
+
+    .intro .hero-copy {
+        margin-bottom: 1rem;
+        font-size: 0.96rem;
+    }
+
+    .hero-actions {
+        gap: 0.5rem;
+    }
+
+    .hero-actions .button {
+        min-height: 42px;
+        padding: 0.55rem 0.7rem;
+        font-size: 0.8rem;
     }
 
     .hero-visual {
@@ -893,5 +914,93 @@ footer p {
         scroll-behavior: auto !important;
         transition-duration: 0.01ms !important;
         animation-duration: 0.01ms !important;
+    }
+}
+
+.home-explore {
+    margin: 0 0 clamp(2.5rem, 6vw, 4rem);
+}
+
+.home-explore-heading {
+    margin-bottom: 1rem;
+}
+
+.home-explore-heading h2 {
+    margin: 0;
+    color: var(--brand-teal-dark);
+    font-size: clamp(1.5rem, 3.2vw, 2rem);
+    letter-spacing: -0.035em;
+}
+
+.home-explore-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0.8rem;
+}
+
+.home-explore-card {
+    display: flex;
+    min-height: 205px;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.1rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--surface);
+    box-shadow: var(--shadow-sm);
+    text-decoration: none;
+}
+
+.home-explore-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--brand-teal);
+    box-shadow: var(--shadow-md);
+}
+
+.home-explore-index {
+    display: inline-grid;
+    width: 32px;
+    height: 32px;
+    place-items: center;
+    margin-bottom: 0.75rem;
+    border-radius: 10px;
+    background: var(--surface-elevated);
+    color: var(--brand-teal);
+    font-size: 0.75rem;
+    font-weight: 750;
+}
+
+.home-explore-card h3 {
+    margin: 0 0 0.25rem;
+    color: var(--brand-teal-dark);
+    font-size: 1.04rem;
+}
+
+.home-explore-card p {
+    margin: 0 0 0.85rem;
+    color: var(--text-secondary);
+    font-size: 0.84rem;
+    line-height: 1.5;
+}
+
+.home-explore-card .text-link {
+    margin-top: auto;
+    font-size: 0.82rem;
+}
+
+@media (max-width: 900px) {
+    .home-explore-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .home-explore-grid {
+        gap: 0.55rem;
+    }
+
+    .home-explore-card {
+        min-height: 190px;
+        padding: 0.9rem;
     }
 }

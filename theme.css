@@ -129,6 +129,111 @@ button {
     transform: translateY(-1px);
 }
 
+.site-footer {
+    display: block;
+    margin-top: auto;
+    padding: 1.15rem 1rem 0.8rem;
+    border-top: 1px solid var(--border);
+    border-radius: 22px 22px 0 0;
+    background:
+        radial-gradient(ellipse at 10% 0, var(--ambient-glow), transparent 36%),
+        var(--surface-elevated);
+    text-align: left;
+}
+
+.site-footer-inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 0.75rem 1.5rem;
+    width: min(1180px, 100%);
+    margin: 0 auto;
+}
+
+.site-footer-nav,
+.site-footer-socials {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.35rem 0.9rem;
+}
+
+.site-footer-nav a {
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+    font-weight: 650;
+    text-decoration: none;
+}
+
+.site-footer-nav a:hover {
+    color: var(--brand-teal-dark);
+}
+
+.site-footer-socials {
+    justify-content: flex-end;
+    gap: 0.4rem;
+}
+
+.site-footer-social {
+    display: inline-flex;
+    min-height: 34px;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.35rem 0.55rem;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    background: var(--surface);
+    color: var(--text-secondary);
+    font-size: 0.73rem;
+    font-weight: 650;
+    text-decoration: none;
+}
+
+.site-footer-social:hover {
+    transform: translateY(-1px);
+    border-color: var(--brand-teal);
+    color: var(--brand-teal-dark);
+}
+
+.site-footer-social svg {
+    width: 15px;
+    height: 15px;
+    flex: 0 0 auto;
+    fill: currentColor;
+}
+
+.site-footer-credit {
+    grid-column: 1 / -1;
+    margin: 0;
+    padding-top: 0.6rem;
+    border-top: 1px solid var(--border);
+    color: var(--text-muted);
+    font-size: 0.7rem;
+    text-align: right;
+}
+
+.site-footer-author {
+    color: var(--text-secondary);
+}
+
+@media (max-width: 700px) {
+    .site-footer-inner {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        gap: 0.7rem;
+    }
+
+    .site-footer-nav,
+    .site-footer-socials {
+        justify-content: center;
+    }
+
+    .site-footer-credit {
+        width: 100%;
+        text-align: center;
+    }
+}
+
 @media (prefers-reduced-motion: reduce) {
     *,
     *::before,

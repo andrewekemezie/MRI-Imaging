@@ -1,0 +1,223 @@
+main {
+    width: min(1120px, calc(100% - 2rem));
+    margin: clamp(1.5rem, 5vw, 3.5rem) auto;
+}
+
+.content-hero {
+    margin: 0 0 clamp(2rem, 5vw, 3.25rem);
+    padding: clamp(1.5rem, 5vw, 3rem);
+    border: 1px solid var(--border);
+    border-radius: calc(var(--radius) + 8px);
+    background: radial-gradient(circle at 88% 18%, var(--ambient-glow), transparent 32%), linear-gradient(135deg, var(--surface), var(--surface-elevated));
+    box-shadow: var(--shadow-sm);
+}
+
+.content-hero h1 {
+    max-width: 760px;
+    margin: 0 0 0.75rem;
+    color: var(--brand-teal-dark);
+    text-align: left;
+    font-size: clamp(2rem, 5vw, 3.7rem);
+    letter-spacing: -0.045em;
+    line-height: 1.08;
+}
+
+.content-hero > p:last-child {
+    max-width: 720px;
+    margin: 0;
+    color: var(--text-secondary);
+    font-size: clamp(1rem, 2vw, 1.12rem);
+}
+
+.content-grid,
+.case-study-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.content-card {
+    padding: clamp(1.2rem, 3vw, 1.8rem);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--surface);
+    box-shadow: var(--shadow-sm);
+    transition: transform var(--motion), border-color var(--motion), box-shadow var(--motion), background-color var(--motion);
+}
+
+.content-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--brand-teal);
+    box-shadow: var(--shadow-md);
+}
+
+.content-card h2,
+.content-cta h2,
+.content-heading h2 {
+    margin: 0 0 0.55rem;
+    color: var(--brand-teal-dark);
+    font-size: clamp(1.3rem, 3vw, 1.8rem);
+    letter-spacing: -0.03em;
+}
+
+.content-card > p:not(.section-kicker) {
+    color: var(--text-secondary);
+}
+
+.content-card .section-kicker,
+.content-heading .section-kicker,
+.content-cta .section-kicker {
+    margin: 0 0 0.4rem;
+    color: var(--brand-orange);
+    font-size: 0.74rem;
+    font-weight: 750;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.topic-list {
+    display: grid;
+    gap: 0.6rem;
+    margin: 1.1rem 0 1.4rem;
+    padding-left: 1.2rem;
+    color: var(--text-secondary);
+}
+
+.topic-list li { margin: 0; }
+.topic-list strong { color: var(--text-primary); }
+
+.topic-number {
+    display: inline-grid;
+    width: 36px;
+    height: 36px;
+    place-items: center;
+    margin-bottom: 0.9rem;
+    border-radius: 11px;
+    background: var(--surface-elevated);
+    color: var(--brand-teal);
+    font-size: 0.8rem;
+    font-weight: 750;
+}
+
+.safety-topics { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+.content-note {
+    display: grid;
+    gap: 0.2rem;
+    margin: 1.15rem 0 clamp(2.5rem, 6vw, 4rem);
+    padding: 1rem 1.2rem;
+    border-left: 3px solid var(--brand-orange);
+    border-radius: 0 12px 12px 0;
+    background: var(--surface-elevated);
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.content-note strong { color: var(--text-primary); }
+
+.content-cta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin: 1.25rem 0 0;
+    padding: clamp(1.2rem, 3vw, 1.8rem);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--surface);
+}
+
+.content-cta h2 { margin-bottom: 0; }
+.curriculum-section { margin-top: clamp(2.5rem, 6vw, 4rem); }
+.content-heading { margin-bottom: 1rem; }
+.content-heading h2 { margin-bottom: 0.35rem; }
+.content-heading > p:last-child { margin: 0; color: var(--text-secondary); }
+
+.curriculum-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.85rem;
+}
+
+.curriculum-card {
+    align-self: start;
+    padding: 1.1rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--surface);
+    box-shadow: var(--shadow-sm);
+}
+
+.curriculum-card summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    color: var(--brand-teal-dark);
+    font-size: 1.05rem;
+    font-weight: 750;
+    cursor: pointer;
+}
+
+.curriculum-card summary span { color: var(--text-muted); font-size: 0.78rem; font-weight: 600; }
+.curriculum-weeks { display: grid; gap: 0.85rem; margin-top: 1rem; }
+.curriculum-weeks > div { padding-top: 0.75rem; border-top: 1px solid var(--border); }
+.curriculum-weeks h3 { margin: 0 0 0.5rem; color: var(--text-primary); font-size: 0.86rem; }
+
+.curriculum-weeks a {
+    display: inline-flex;
+    min-height: 36px;
+    align-items: center;
+    margin: 0 0.35rem 0.35rem 0;
+    padding: 0.35rem 0.65rem;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--surface-elevated);
+    color: var(--brand-teal-dark);
+    font-size: 0.82rem;
+    font-weight: 650;
+    text-decoration: none;
+}
+
+.curriculum-weeks a:hover { border-color: var(--brand-teal); background: var(--surface); }
+.case-study-grid { align-items: stretch; }
+.case-study-card { display: flex; flex-direction: column; align-items: flex-start; }
+.case-study-card .text-link { margin-top: auto; }
+.learning-points { display: grid; gap: 0.75rem; margin: 0.8rem 0 1.2rem; }
+.learning-points dt { color: var(--brand-teal-dark); font-size: 0.82rem; font-weight: 750; }
+.learning-points dd { margin: 0.1rem 0 0; color: var(--text-secondary); font-size: 0.9rem; }
+.insights-content .filter-list { margin-bottom: 1rem; }
+
+.insights-content .insight-card h2,
+.insights-content .featured-insight h2 {
+    margin: 0 0 0.55rem;
+    color: var(--brand-teal-dark);
+    font-size: 1.2rem;
+    line-height: 1.25;
+}
+
+.insights-content .featured-insight h2 { max-width: 470px; font-size: clamp(1.6rem, 3.5vw, 2.2rem); }
+.footer-nav { flex-wrap: wrap; }
+.page-nav a[aria-current="page"] { color: var(--brand-orange); }
+
+@media (max-width: 700px) {
+    .header-content {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.25rem 0.75rem;
+    }
+
+    .header-content > .page-nav {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 0.6rem;
+    }
+
+    .content-grid,
+    .case-study-grid,
+    .safety-topics,
+    .curriculum-grid { grid-template-columns: 1fr; }
+    .content-cta { align-items: flex-start; flex-direction: column; }
+    .curriculum-card summary { align-items: flex-start; flex-direction: column; gap: 0.15rem; }
+}
